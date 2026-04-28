@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>AI Converter</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/stylepric.css">
+
+<script src="js/script.js"></script>
+<!-- أيقونات -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- 🔥 Sidebar -->
+    <div class="sidebar">
+
+        <h2>🔥 pro haider </h2>
+
+        <button onclick="setMode('pdf-word')">
+            <i class="fa-solid fa-file-pdf"></i>
+            PDF → Word
+        </button>
+
+        <button onclick="setMode('word-excel')">
+            <i class="fa-solid fa-file-word"></i>
+            Word → Excel
+        </button>
+
+        <button onclick="setMode('excel-word')">
+            <i class="fa-solid fa-file-excel"></i>
+            Excel → Word
+        </button>
+
+        <button onclick="setMode('pdf-images')">
+            <i class="fa-solid fa-image"></i>
+            سحب صور PDF
+        </button>
+
+        <button onclick="setMode('word-images')">
+            <i class="fa-solid fa-images"></i>
+            سحب صور Word
+        </button>
+
+        <button onclick="setMode('pdf-tables')">
+            <i class="fa-solid fa-table"></i>
+            سحب جداول PDF
+        </button>
+
+        <button onclick="setMode('excel-tables')">
+            <i class="fa-solid fa-database"></i>
+            سحب جداول Excel
+        </button>
+
+    </div>
+
+    <div id="contentArea"></div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
