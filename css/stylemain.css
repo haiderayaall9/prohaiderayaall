@@ -1,4 +1,9 @@
 /* ================= RESET ================= */
+body{
+
+  overflow-x: hidden;
+
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +11,7 @@
   font-family: 'Segoe UI', Tahoma, sans-serif;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+
 }
 
 /* ================= HERO ================= */
@@ -274,18 +280,19 @@
     order: -1;
     transform: translateY(-80px);
   }
+  .social-link,
+.social-linkk {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 
-  .social-link {
-    justify-content: center;
-    transform: translate(130px, -623px);
-   
-  }
+  position: relative;
+  transform: none;
 
-  .social-linkk {
-    justify-content: center;
-    transform: translate(-130px, -693px);
-   
-  }
+  margin-top: 15px;
+  z-index: 10;
+}
+
   .clock-container {
     width: 200px;
     height: 200px;
@@ -418,10 +425,10 @@ section h2::after {
   color: #111;
 }
 
-/* موبايل 3 فقط */
 @media (max-width: 768px) {
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }
 
