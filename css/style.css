@@ -30,10 +30,10 @@ body {
 }
 
 .sidebar h2 {
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
   font-size: 22px;
-  color: #818cf8;
+  color: #dadbe4;
 }
 
 /* 🔥 أزرار */
@@ -131,34 +131,13 @@ body {
 
 
 
-/* 📱 تابلت */
-@media (max-width: 1024px) {
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
-/* 📱 تابلت صغير */
-@media (max-width: 768px) {
-
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
 
   .sidebar {
     width: 200px;
     padding: 15px;
   }
 
-  .card {
-    padding: 18px;
-  }
-
-  .price {
-    font-size: 20px;
-  }
-}
 
 /* 🧠 الهيكل العام */
 .app {
@@ -178,81 +157,7 @@ body {
   scrollbar-color: #6366f1 transparent;
 }
 
-/* 🔥 Grid احترافي */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
 
-  animation: fadeIn 0.6s ease;
-}
-
-/* 💎 الكارت */
-.card {
-  position: relative;
-  padding: 22px;
-  border-radius: 18px;
-
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  text-align: center;
-
-  transition: all 0.35s ease;
-
-  overflow: hidden;
-}
-
-/* ✨ Glow خلفي */
-.card::before {
-  content: "";
-  position: absolute;
-  top: -60%;
-  left: -60%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(99,102,241,0.25), transparent 60%);
-  transform: rotate(25deg);
-  opacity: 0;
-  transition: 0.4s;
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-/* 🚀 Hover */
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-  border-color: rgba(99,102,241,0.4);
-}
-
-/* 💰 السعر */
-.price {
-  font-size: 22px;
-  color: #60a5fa;
-  margin: 12px 0;
-  font-weight: bold;
-}
-
-/* ❌ السعر القديم */
-.old {
-  text-decoration: line-through;
-  color: #94a3b8;
-  margin-right: 6px;
-  font-size: 14px;
-}
-
-/* 📄 نص */
-.card p {
-  font-size: 13px;
-  color: #cbd5e1;
-  line-height: 1.6;
-}
 
 /* ✨ انيميشن دخول */
 @keyframes fadeIn {
@@ -266,35 +171,16 @@ body {
   }
 }
 
-/* 📱 تابلت */
-@media (max-width: 1024px) {
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
-/* 📱 تابلت صغير */
-@media (max-width: 768px) {
 
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
+
 
   .sidebar {
     width: 200px;
     padding: 15px;
   }
 
-  .card {
-    padding: 18px;
-  }
-
-  .price {
-    font-size: 20px;
-  }
-}
-
+ 
 /* 📱 موبايل */
 @media (max-width: 500px) {
 
@@ -318,22 +204,4 @@ body {
     padding: 10px;
   }
 
-  /* المحتوى */
-  #contentArea {
-    padding: 15px;
-  }
-
-  /* كروت عمود واحد */
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .card {
-    padding: 15px;
-  }
-
-  .card p {
-    font-size: 12px;
-  }
 }
