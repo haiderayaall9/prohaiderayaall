@@ -1,0 +1,679 @@
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#fff;
+  color:#111;
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+h2{
+  text-align:center;
+  margin:40px 0;
+}
+
+/* ================= GRID ================= */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  padding:20px 10%;
+}
+
+/* ================= CARD ================= */
+.project-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* ================= IMAGES (FIX مهم) ================= */
+.images{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
+  margin-bottom:10px;
+}
+
+.img-box{
+  position:relative;
+  width:100%;
+}
+
+.img-box img{
+  width:100%;
+  height:80px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* زر العين */
+.img-box button{
+  position:absolute;
+  bottom:5px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,0.6);
+  border:none;
+  color:#fff;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.img-box button:hover{
+  background:#4bffa5;
+  color:#000;
+}
+
+/* ================= VIEWER ================= */
+.viewer{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  animation:fadeIn 0.3s ease;
+}
+
+.viewer img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+  transform:scale(0.8);
+  animation:pop 0.3s ease forwards;
+}
+
+@keyframes pop{
+  to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* ================= TEXT ================= */
+.project-title{
+  font-weight:bold;
+  font-size:18px;
+  
+}
+
+.project-dev{
+  font-size:14px;
+  color:#555;
+  margin:5px 0 10px;
+}
+
+/* FEATURES */
+.features div{
+  display:flex;
+  justify-content:space-between;
+  margin:4px 0;
+  font-weight:bold;
+}
+
+
+/* PRICES */
+.prices{
+  border-top:1px solid #eee;
+  margin-top:10px;
+  padding-top:10px;
+  
+}
+
+
+.desc{
+  font-size:14px;
+  color:#555;
+  margin-top:10px;
+  line-height:1.6;
+
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+}
+
+.desc i{
+  color:#071a10;
+  margin-top:3px;
+  font-size:14px;
+}
+
+/* SOCIAL */
+.social{
+  margin-top:15px;
+  display:flex;
+  gap:10px;
+}
+
+.social a{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:1px solid #ddd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#444;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+  .projects-grid{
+    grid-template-columns:1fr;
+    padding:15px;
+  }
+
+  .images{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+.price-line,
+.total,
+.discount{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  font-size:14px;
+  margin:6px 0;
+  font-weight:bold;
+}
+
+/* شكل الأيقونة */
+.price-line i,
+.total i,
+.discount i{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background:#f3f3f3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#3d19c0;
+  font-size:14px;
+}
+
+/* الكلي */
+.total{
+  font-weight:bold;
+  border-top:1px solid #eee;
+  padding-top:8px;
+}
+
+/* الخصم */
+.discount i{
+  background:#ffe6e6;
+  color:red;
+}
+.features{
+  margin-top:10px;
+  padding:10px;
+  background:#fafafa;
+  border-radius:12px;
+}
+
+.feat{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:6px 0;
+  font-size:14px;
+  color:#333;
+  border-bottom:1px solid #eee;
+}
+
+.feat:last-child{
+  border-bottom:none;
+}
+
+.feat i{
+  color:#15677c;
+  font-size:16px;
+}
+
+.check{
+  color:#851294;
+  font-size:14px;
+}
+.title{
+  font-size:18px;
+  font-weight:600;
+  color:#111;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:10px;
+}
+
+.dev{
+  font-size:16px;
+  color:#130d0d;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:5px;
+}
+
+.title i,
+.dev i{
+  color:#044625;
+  font-size:16px;
+}
+.social{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:nowrap;   /* يمنع النزول تحت */
+  overflow-x:auto;    /* إذا ضاق يخليه يمرر أفقياً */
+}
+
+/* الأيقونات */
+.social a{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:1px solid #ddd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#444;
+  transition:0.3s;
+}
+
+.social a:hover{
+  background:#4bffa5;
+  color:#111;
+  transform:translateY(-2px);
+}
+
+/* زر الحجز */
+.book-btn{
+  width:auto !important;
+  padding:0 12px;
+  height:35px;
+  border-radius:20px !important;
+  background:#111;
+  color:#fff !important;
+  border:none !important;
+
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.book-btn i{
+  font-size:14px;
+}
+
+.book-btn:hover{
+  background:#4bffa5;
+  color:#111 !important;
+}
+.course-btn{
+  width:auto !important;
+  padding:0 62px;
+  height:35px;
+  border-radius:20px !important;
+  background:#4bffa5;
+  color:#111 !important;
+  border:none !important;
+
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  font-size:13px;
+  font-weight:bold;
+}
+
+.course-btn i{
+  font-size:14px;
+}
+
+.course-btn:hover{
+  background:#111;
+  color:#fff !important;
+}
+.course-menu{
+  display:none;
+  margin-top:10px;
+  padding:12px;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  animation:fadeIn 0.3s ease;
+}
+
+.course-menu h4{
+  margin-bottom:8px;
+  font-size:15px;
+  color:#111;
+}
+
+.course-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:5px 0;
+  font-size:13px;
+  color:#444;
+}
+
+.course-item i{
+  color:#4bffa5;
+  font-size:14px;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(-5px);}
+  to{opacity:1; transform:translateY(0);}
+}
+.images-count{
+  font-size:14px;
+  font-weight:600;
+  color:#333;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  margin-top:10px;
+  padding:8px 14px;
+
+  background:#fafafa;
+  border:1px solid #05852b;
+  border-radius:20px;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.images-count i{
+  color:#b42288;
+  font-size:16px;
+}
+
+.images-count b{
+  color:#111;
+  font-size:15px;
+}
+.pay-btn{
+  width:auto !important;
+  padding:0 12px;
+  height:35px;
+  border-radius:20px !important;
+
+  background:#111;
+  color:#fff !important;
+  border:none !important;
+
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  font-size:13px;
+  font-weight:bold;
+
+  transition:0.3s;
+}
+
+.pay-btn i{
+  font-size:14px;
+  color:#4bffa5;
+}
+
+.pay-btn:hover{
+  background:#4bffa5;
+  color:#111 !important;
+}
+
+.pay-btn:hover i{
+  color:#111;
+}
+
+
+
+
+/* الخلفية */
+.pay-modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+/* الصندوق */
+.pay-box{
+  width:320px;
+  background:#fff;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+  text-align:right;
+  animation:pop .3s ease;
+}
+
+.pay-box h2{
+  font-size:18px;
+  margin-bottom:10px;
+  color:#111;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+/* النص */
+.pay-text{
+  font-size:13px;
+  color:#555;
+  margin-bottom:10px;
+}
+
+/* القائمة */
+.pay-list{
+  list-style:none;
+  padding:0;
+}
+
+.pay-list li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:6px 0;
+  font-size:13px;
+  color:#333;
+}
+
+.pay-list i{
+  color:#4bffa5;
+}
+
+/* زر الإغلاق */
+.close-btn{
+  margin-top:15px;
+  width:100%;
+  padding:10px;
+  border:none;
+  background:#111;
+  color:#fff;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.close-btn:hover{
+  background:#4bffa5;
+  color:#111;
+}
+
+/* أنيميشن */
+@keyframes pop{
+  from{transform:scale(0.8);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+@media(max-width:768px){
+  .course-btn{
+    width:100%;      /* يصير زر كامل العرض */
+    justify-content:center;
+  }
+}
+/* ================= FIX GLOBAL ================= */
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  overflow-x:hidden;
+  font-family:Segoe UI;
+}
+
+/* ================= TOPBAR ================= */
+.topbar{
+  width:100%;
+  padding:10px 15px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  background:#fff;
+  border-bottom:1px solid #eee;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+/* ================= RIGHT ================= */
+.dev-name{
+  font-weight:600;
+  font-size:15px;
+  color:#111;
+  white-space:nowrap;
+}
+
+/* ================= CENTER ================= */
+.top-center{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  flex:1;
+  min-width:0; /* مهم جداً */
+}
+
+/* SEARCH */
+.search-box{
+  width:100%;
+  max-width:180px;
+
+  padding:7px 10px;
+  border-radius:20px;
+  border:1px solid #ddd;
+  outline:none;
+
+  font-size:13px;
+}
+
+/* ICONS */
+.lang-icons{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap; /* يمنع الخروج */
+  justify-content:center;
+  margin-top:6px;
+}
+
+.lang-icons i{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+
+  background:#f3f3f3;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:13px;
+  color:#444;
+
+  transition:0.3s;
+}
+
+.lang-icons i:hover{
+  background:#4bffa5;
+  color:#111;
+  transform:scale(1.1);
+}
+
+/* ================= LEFT ================= */
+.top-left{
+  display:flex;
+  gap:6px;
+  flex-shrink:0;
+}
+
+.top-btn{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+
+  background:#111;
+  color:#fff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+  font-size:13px;
+
+  transition:0.3s;
+}
+
+.top-btn:hover{
+  background:#4bffa5;
+  color:#111;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+  .topbar{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .search-box{
+    max-width:100%;
+  }
+
+  .top-left{
+    justify-content:center;
+  }
+}
